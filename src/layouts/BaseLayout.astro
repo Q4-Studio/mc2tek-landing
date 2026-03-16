@@ -1,0 +1,42 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "MC2 TEK Ingegneria e Servizi",
+  description = "Ingegneria e progettazione di impianti elettrici, termotecnici e riscaldamento in Veneto.",
+  image = `${import.meta.env.BASE_URL}source-assets/video/d36175f4549276e09bf8bac02ef5958f.jpg`,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://q4-studio.github.io");
+const canonical = new URL(Astro.url.pathname, siteUrl);
+const favicon192 = `${import.meta.env.BASE_URL}source-assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png`;
+const favicon32 = `${import.meta.env.BASE_URL}source-assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png`;
+const appleTouch = `${import.meta.env.BASE_URL}source-assets/images/725b756a69a7d4c235070e51acd85560.png`;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+    <link rel="icon" type="image/png" sizes="192x192" href={favicon192} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouch} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

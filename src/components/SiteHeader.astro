@@ -1,0 +1,23 @@
+---
+const { brand, nav } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand-lockup" href="#top" aria-label={`Vai all'inizio di ${brand.name}`}>
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-copy">
+        <strong>{brand.name}</strong>
+        <small>{brand.location}</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigazione principale">
+      {nav.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <a class="button button-ghost header-cta" href="#contatti">Contattaci</a>
+  </div>
+</header>

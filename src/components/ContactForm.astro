@@ -1,0 +1,117 @@
+---
+const { contact } = Astro.props;
+const webhookConfigured = Boolean(contact.webhookUrl);
+---
+
+<div class="contact-form-card">
+  <div class="contact-form-head">
+    <span class="eyebrow">Webhook form</span>
+    <h3>Contatto diretto</h3>
+    <p>
+      Form custom statico pronto per GitHub Pages. Invio JSON verso webhook configurabile.
+    </p>
+  </div>
+
+  {!webhookConfigured && (
+    <p class="inline-note">
+      Endpoint non ancora configurato. Il form e gia pronto: basta impostare
+      <code>PUBLIC_CONTACT_WEBHOOK_URL</code> al prossimo deploy.
+    </p>
+  )}
+
+  <form class="contact-form" data-contact-form data-webhook-url={contact.webhookUrl}>
+    <div class="form-grid">
+      <label>
+        <span>Nome e cognome</span>
+        <input name="name" type="text" autocomplete="name" required />
+      </label>
+      <label>
+        <span>Email</span>
+        <input name="email" type="email" autocomplete="email" required />
+      </label>
+      <label>
+        <span>Telefono</span>
+        <input name="phone" type="tel" autocomplete="tel" />
+      </label>
+      <label>
+        <span>Azienda</span>
+        <input name="company" type="text" autocomplete="organization" />
+      </label>
+    </div>
+
+    <label>
+      <span>Messaggio</span>
+      <textarea name="message" rows="6" required></textarea>
+    </label>
+
+    <label class="checkbox-field">
+      <input name="privacyAccepted" type="checkbox" required />
+      <span>Acconsento al trattamento dei dati per la gestione della richiesta.</span>
+    </label>
+
+    <div class="form-actions">
+      <button class="button" type="submit">Invia richiesta</button>
+      <p class="form-status" data-form-status aria-live="polite">
+        Compila i campi e invia. Il payload include anche l'URL della pagina.
+      </p>
+    </div>
+  </form>
+</div>
+
+<script is:inline>
+  const forms = document.querySelectorAll("[data-contact-form]");
+
+  forms.forEach((form) => {
+    const statusEl = form.querySelector("[data-form-status]");
+
+    const setStatus = (state, message) => {
+      form.dataset.state = state;
+      if (statusEl) {
+        statusEl.textContent = message;
+      }
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const endpoint = form.dataset.webhookUrl?.trim();
+      if (!endpoint) {
+        setStatus("error", "Webhook non configurato. Imposta PUBLIC_CONTACT_WEBHOOK_URL per attivare l'invio.");
+        return;
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        name: String(formData.get("name") || "").trim(),
+        email: String(formData.get("email") || "").trim(),
+        phone: String(formData.get("phone") || "").trim(),
+        company: String(formData.get("company") || "").trim(),
+        message: String(formData.get("message") || "").trim(),
+        privacyAccepted: formData.get("privacyAccepted") === "on",
+        pageUrl: window.location.href,
+      };
+
+      setStatus("loading", "Invio in corso...");
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Webhook response ${response.status}`);
+        }
+
+        form.reset();
+        setStatus("success", "Richiesta inviata correttamente.");
+      } catch (error) {
+        console.error(error);
+        setStatus("error", "Invio non riuscito. Verifica il webhook o riprova piu tardi.");
+      }
+    });
+  });
+</script>

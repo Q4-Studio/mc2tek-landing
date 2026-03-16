@@ -1,0 +1,221 @@
+---
+import ContactForm from "../components/ContactForm.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { createSiteConfig } from "../data/site.js";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const withBase = (path) => {
+  if (typeof path !== "string" || !path.startsWith("/")) {
+    return path;
+  }
+
+  return `${import.meta.env.BASE_URL}${path.slice(1)}`;
+};
+
+const site = createSiteConfig(import.meta.env.PUBLIC_CONTACT_WEBHOOK_URL ?? "");
+
+site.hero.video = withBase(site.hero.video);
+site.hero.poster = withBase(site.hero.poster);
+site.hero.spotlights = site.hero.spotlights.map((item) => ({
+  ...item,
+  image: withBase(item.image),
+}));
+site.services = site.services.map((item) => ({
+  ...item,
+  icon: withBase(item.icon),
+}));
+site.approach.media = site.approach.media.map(withBase);
+site.showcase.cards = site.showcase.cards.map((item) => ({
+  ...item,
+  image: withBase(item.image),
+}));
+
+const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f.jpg");
+---
+
+<BaseLayout title={site.brand.legalName} description={site.brand.description} image={seoImage}>
+  <a id="top"></a>
+  <SiteHeader brand={site.brand} nav={site.nav} />
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-media-shell" aria-hidden="true">
+        <video autoplay muted loop playsinline poster={site.hero.poster}>
+          <source src={site.hero.video} type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="hero-noise" aria-hidden="true"></div>
+
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">{site.hero.eyebrow}</span>
+          <h1>{site.hero.title}</h1>
+          <p class="hero-intro">{site.hero.intro}</p>
+          <p class="hero-supporting">{site.hero.supporting}</p>
+
+          <div class="hero-actions">
+            <a class="button" href={site.hero.primaryCta.href}>{site.hero.primaryCta.label}</a>
+            <a class="button button-ghost light" href={site.hero.secondaryCta.href}>
+              {site.hero.secondaryCta.label}
+            </a>
+          </div>
+
+          <ul class="hero-highlights" aria-label="Punti chiave">
+            {site.hero.highlights.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="hero-aside">
+          <div class="hero-aside-frame">
+            {site.hero.spotlights.map((item, index) => (
+              <article class={`spotlight-card spotlight-${index + 1}`}>
+                <img src={item.image} alt={item.label} loading="lazy" />
+                <div>
+                  <span>{item.label}</span>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="servizi">
+      <div class="shell section-head">
+        <div>
+          <span class="eyebrow">Servizi</span>
+          <h2>Competenze integrate per progetti tecnici piu chiari, performanti e controllabili.</h2>
+        </div>
+        <p>
+          MC2TEK mantiene i suoi ambiti storici ma li presenta con un ritmo piu netto: meno rumore, piu gerarchia,
+          maggiore coerenza tra messaggio, visual e call to action.
+        </p>
+      </div>
+
+      <div class="shell service-grid">
+        {site.services.map((service, index) => (
+          <article class="service-card">
+            <div class="service-topline">
+              <span class="service-index">0{index + 1}</span>
+              <img class="service-icon" src={service.icon} alt="" loading="lazy" />
+            </div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section dark-section" id="metodo">
+      <div class="shell method-grid">
+        <div class="method-copy">
+          <span class="eyebrow">{site.approach.eyebrow}</span>
+          <h2>{site.approach.title}</h2>
+          <p>{site.approach.intro}</p>
+
+          <div class="pillar-grid">
+            {site.approach.pillars.map((pillar) => (
+              <article class="pillar-card">
+                <h3>{pillar.title}</h3>
+                <p>{pillar.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="method-visual" aria-hidden="true">
+          <div class="visual-orb"></div>
+          <img class="floating-media primary" src={site.approach.media[0]} alt="" loading="lazy" />
+          <img class="floating-media secondary" src={site.approach.media[1]} alt="" loading="lazy" />
+          <img class="floating-media accent" src={site.approach.media[2]} alt="" loading="lazy" />
+          <div class="method-caption">
+            <span>Industrial clean</span>
+            <p>Un sistema visivo piu attuale per raccontare innovazione, sicurezza e sostenibilita.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase-section">
+      <div class="shell section-head">
+        <div>
+          <span class="eyebrow">{site.showcase.eyebrow}</span>
+          <h2>{site.showcase.title}</h2>
+        </div>
+        <p>{site.showcase.intro}</p>
+      </div>
+
+      <div class="shell showcase-grid">
+        {site.showcase.cards.map((card) => (
+          <article class="showcase-card">
+            <img src={card.image} alt={card.title} loading="lazy" />
+            <div class="showcase-card-copy">
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contatti">
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">{site.contact.eyebrow}</span>
+          <h2>{site.contact.title}</h2>
+          <p>{site.contact.intro}</p>
+
+          <div class="contact-stack">
+            <article class="contact-card">
+              <span>Sede</span>
+              <strong>{site.brand.address}</strong>
+              <a href={site.brand.mapsUrl} target="_blank" rel="noreferrer">
+                Apri Google Maps
+              </a>
+            </article>
+
+            <article class="contact-card">
+              <span>Riferimenti</span>
+              <strong>
+                <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a>
+              </strong>
+              <strong>
+                <a href={`tel:${site.brand.phone.replaceAll("/", "")}`}>Tel. {site.brand.phone}</a>
+              </strong>
+              <strong>
+                <a href={`tel:${site.brand.mobile.replaceAll("-", "")}`}>Cell. {site.brand.mobile}</a>
+              </strong>
+            </article>
+
+            <article class="contact-card">
+              <span>Impresa</span>
+              <strong>Partita IVA {site.brand.vat}</strong>
+              <p>GitHub Pages in hosting statico. Webhook form configurabile in deploy.</p>
+            </article>
+          </div>
+        </div>
+
+        <ContactForm contact={site.contact} />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <strong>{site.brand.legalName}</strong>
+        <p>{site.brand.description}</p>
+      </div>
+      <div class="footer-meta">
+        <span>{site.footer.credit}</span>
+        {site.footer.notes.map((note) => (
+          <span>{note}</span>
+        ))}
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
