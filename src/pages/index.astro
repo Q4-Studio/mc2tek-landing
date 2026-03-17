@@ -16,10 +16,6 @@ const site = createSiteConfig(import.meta.env.PUBLIC_CONTACT_WEBHOOK_URL ?? "");
 
 site.hero.video = withBase(site.hero.video);
 site.hero.poster = withBase(site.hero.poster);
-site.hero.spotlights = site.hero.spotlights.map((item) => ({
-  ...item,
-  image: withBase(item.image),
-}));
 site.services = site.services.map((item) => ({
   ...item,
   icon: withBase(item.icon),
@@ -49,36 +45,14 @@ const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f
 
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">{site.hero.eyebrow}</span>
           <h1>{site.hero.title}</h1>
           <p class="hero-intro">{site.hero.intro}</p>
-          <p class="hero-supporting">{site.hero.supporting}</p>
 
           <div class="hero-actions">
             <a class="button" href={site.hero.primaryCta.href}>{site.hero.primaryCta.label}</a>
             <a class="button button-ghost light" href={site.hero.secondaryCta.href}>
               {site.hero.secondaryCta.label}
             </a>
-          </div>
-
-          <ul class="hero-highlights" aria-label="Punti chiave">
-            {site.hero.highlights.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div class="hero-aside">
-          <div class="hero-aside-frame">
-            {site.hero.spotlights.map((item, index) => (
-              <article class={`spotlight-card spotlight-${index + 1}`}>
-                <img src={item.image} alt={item.label} loading="lazy" />
-                <div>
-                  <span>{item.label}</span>
-                  <p>{item.text}</p>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </div>
