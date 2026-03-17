@@ -24,8 +24,6 @@ export function createSiteConfig(webhookUrl = "") {
       title: "Il tuo nuovo partner per una migliore innovazione.",
       intro:
         "Le sfide moderne richiedono soluzioni ingegneristiche avanzate. Innovazione ed efficienza sono la chiave per trasformare le idee in realta sostenibili.",
-      supporting:
-        "Progettiamo sistemi elettrici, termotecnici e impianti ad alte prestazioni con un linguaggio progettuale piu chiaro, contemporaneo e omogeneo.",
       primaryCta: {
         label: "Parla con noi",
         href: "#contatti",
@@ -36,28 +34,6 @@ export function createSiteConfig(webhookUrl = "") {
       },
       video: "/source-assets/video/85821d495392c913b676d90626c03971.mp4",
       poster: "/source-assets/video/d36175f4549276e09bf8bac02ef5958f.jpg",
-      spotlights: [
-        {
-          label: "Transizione energetica",
-          text: "Soluzioni integrate per ridurre consumi e valorizzare gli immobili.",
-          image: "/source-assets/video/90431d8135871c5bd0f8020843afbb80.jpg",
-        },
-        {
-          label: "Qualita esecutiva",
-          text: "Direzione lavori, coordinamento e controllo in ogni fase di progetto.",
-          image: "/source-assets/video/371bae2c6ed79227e2228b0a6fc1144e.jpg",
-        },
-        {
-          label: "Approccio tecnico",
-          text: "Visione ingegneristica unita a comfort, sicurezza e sostenibilita.",
-          image: "/source-assets/video/8a3721d7bdc28b2f072074060941bf78.jpg",
-        },
-      ],
-      highlights: [
-        "6 aree di competenza integrate",
-        "Operativita in Veneto",
-        "Base a Vigonza, Padova",
-      ],
     },
     services: [
       {
