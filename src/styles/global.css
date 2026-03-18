@@ -267,10 +267,14 @@ h3 {
 }
 
 .hero-supporting,
-.section-head p,
-.method-copy > p,
-.contact-copy > p {
+.method-copy > p {
   color: rgba(237, 244, 242, 0.74);
+  font-size: 1.02rem;
+}
+
+.section-head p,
+.contact-copy > p {
+  color: var(--text-soft);
   font-size: 1.02rem;
 }
 
@@ -425,7 +429,6 @@ h3 {
   height: 4.5rem;
   object-fit: contain;
   opacity: 0.92;
-  mix-blend-mode: darken;
 }
 
 .dark-section {

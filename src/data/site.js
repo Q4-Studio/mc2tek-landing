@@ -40,37 +40,37 @@ export function createSiteConfig(webhookUrl = "") {
         title: "Impianti Meccanici",
         description:
           "Progettiamo e realizziamo sistemi affidabili ed efficienti, garantendo comfort, prestazioni elevate e riduzione dei costi di gestione.",
-        icon: "/source-assets/media/7d972a139a75d9f7055314fa41515032.png",
+        icon: "/source-assets/media/icon-impianti-meccanici.svg",
       },
       {
         title: "Efficientamento Energetico",
         description:
           "Sviluppiamo soluzioni innovative per ridurre i consumi e migliorare la sostenibilita, aumentando il valore degli immobili.",
-        icon: "/source-assets/media/f22f9e6945d6655bde1103160a7e837b.png",
+        icon: "/source-assets/media/icon-efficientamento-energetico.svg",
       },
       {
         title: "Prevenzione Incendi",
         description:
           "Offriamo progettazione e consulenza per impianti antincendio, nel rispetto delle normative, per garantire sicurezza e protezione totale.",
-        icon: "/source-assets/media/0c877951045031a81ae9c2826a8ddaa3.png",
+        icon: "/source-assets/media/icon-prevenzione-incendi.svg",
       },
       {
         title: "Sicurezza e Impianti Elettrici",
         description:
           "Realizziamo impianti elettrici sicuri e tecnologicamente avanzati, per un utilizzo affidabile e conforme agli standard di settore.",
-        icon: "/source-assets/media/477a0f2934b19417f9acc2d2ae6a74e1.svg",
+        icon: "/source-assets/media/icon-sicurezza-elettrica.svg",
       },
       {
         title: "Acustica e Misurazioni",
         description:
           "Analizziamo e gestiamo il comfort acustico degli ambienti attraverso rilievi e soluzioni tecniche mirate.",
-        icon: "/source-assets/media/177695e3847fcbf8f7508760755d64e8.png",
+        icon: "/source-assets/media/icon-acustica.svg",
       },
       {
         title: "Direzione Lavori",
         description:
           "Coordiniamo e supervisioniamo ogni fase del progetto, assicurando qualita, rispetto delle tempistiche e massima efficienza.",
-        icon: "/source-assets/media/2da83fede04a16d535d32249d5bb8628.png",
+        icon: "/source-assets/media/icon-direzione-lavori.svg",
       },
     ],
     approach: {
