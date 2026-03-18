@@ -96,34 +96,7 @@ export function createSiteConfig(webhookUrl = "") {
           text: "Direzione lavori e coordinamento costante per garantire esiti affidabili.",
         },
       ],
-      media: [
-        "/source-assets/media/f22f9e6945d6655bde1103160a7e837b.png",
-        "/source-assets/media/0c877951045031a81ae9c2826a8ddaa3.png",
-        "/source-assets/media/477a0f2934b19417f9acc2d2ae6a74e1.svg",
-      ],
-    },
-    showcase: {
-      eyebrow: "Focus",
-      title: "Una homepage piu uniforme, senza perdere i materiali originali.",
-      intro:
-        "Video, immagini e asset vengono riutilizzati in un sistema visivo piu contemporaneo, con maggiore chiarezza nelle priorita di lettura.",
-      cards: [
-        {
-          title: "Scenari e contesto",
-          text: "Background video e immagini di progetto impostano subito il tono tecnico e premium.",
-          image: "/source-assets/video/371bae2c6ed79227e2228b0a6fc1144e.jpg",
-        },
-        {
-          title: "Energia e controllo",
-          text: "Le sezioni guidano l'utente tra prestazioni, sicurezza e sostenibilita in modo piu leggibile.",
-          image: "/source-assets/video/90431d8135871c5bd0f8020843afbb80.jpg",
-        },
-        {
-          title: "Presenza fisica",
-          text: "Contatti, sede e call to action finali rendono l'ingaggio diretto e immediato.",
-          image: "/source-assets/video/5f55426bfbeee1dd0f99540c414f8c26.jpg",
-        },
-      ],
+      image: "/source-assets/video/8a3721d7bdc28b2f072074060941bf78.jpg",
     },
     contact: {
       eyebrow: "Contatti",
@@ -134,8 +107,7 @@ export function createSiteConfig(webhookUrl = "") {
       fields: ["name", "email", "phone", "company", "message", "privacyAccepted", "pageUrl"],
     },
     footer: {
-      credit: "2025 create by mc2",
-      notes: ["Privacy policy", "informativa sui cookie"],
+      notes: ["Privacy policy", "Informativa sui cookie"],
     },
   };
 }

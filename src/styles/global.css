@@ -96,7 +96,7 @@ textarea {
   padding: 0.95rem 1.35rem;
   border: 1px solid transparent;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), #5cbf2a);
+  background: var(--accent);
   color: #fff;
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.94rem;
@@ -245,13 +245,13 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(3.6rem, 7vw, 7rem);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
   max-width: 16ch;
 }
 
 h2 {
-  font-size: clamp(2.3rem, 5vw, 4.4rem);
-  max-width: 13ch;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  max-width: 18ch;
 }
 
 h3 {
@@ -262,7 +262,7 @@ h3 {
 
 .hero-intro {
   max-width: 44rem;
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   color: rgba(237, 244, 242, 0.88);
 }
 
@@ -336,7 +336,7 @@ h3 {
 .spotlight-card span {
   display: inline-block;
   margin-bottom: 0.45rem;
-  color: var(--accent-secondary);
+  color: var(--accent);
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
@@ -391,7 +391,6 @@ h3 {
 
 .service-card,
 .pillar-card,
-.showcase-card,
 .contact-card,
 .contact-form-card {
   border-radius: var(--radius);
@@ -426,6 +425,7 @@ h3 {
   height: 4.5rem;
   object-fit: contain;
   opacity: 0.92;
+  mix-blend-mode: darken;
 }
 
 .dark-section {
@@ -460,95 +460,23 @@ h3 {
   border-radius: var(--radius-lg);
   border: 1px solid var(--line-inverse);
   overflow: hidden;
-  background:
-    radial-gradient(circle at center, rgba(41, 163, 0, 0.15), transparent 42%),
-    linear-gradient(180deg, rgba(237, 244, 242, 0.08), rgba(237, 244, 242, 0.03));
 }
 
-.visual-orb {
-  position: absolute;
-  inset: 18% 12% auto auto;
-  width: 12rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 207, 0, 0.6), rgba(124, 207, 0, 0));
-  filter: blur(28px);
+.method-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.floating-media {
-  position: absolute;
-  object-fit: contain;
-  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.2));
-}
-
-.floating-media.primary {
-  inset: 10% auto auto 5%;
-  width: 45%;
-  animation: drift 8s ease-in-out infinite;
-}
-
-.floating-media.secondary {
-  inset: auto 8% 17% auto;
-  width: 38%;
-  animation: drift 9s ease-in-out infinite reverse;
-}
-
-.floating-media.accent {
-  inset: auto auto 12% 14%;
-  width: 24%;
-  animation: pulse 5s ease-in-out infinite;
-}
-
-.method-caption {
-  position: absolute;
-  left: 1.25rem;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--line-inverse);
-  border-radius: 22px;
-  background: rgba(8, 18, 24, 0.5);
-  backdrop-filter: blur(18px);
-}
-
-.method-caption span,
 .contact-card span {
   display: inline-block;
   margin-bottom: 0.35rem;
-  color: var(--accent-secondary);
+  color: var(--accent);
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.showcase-section {
-  background:
-    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.34)),
-    var(--bg);
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.showcase-card {
-  overflow: hidden;
-}
-
-.showcase-card img {
-  width: 100%;
-  height: 17rem;
-  object-fit: cover;
-}
-
-.showcase-card-copy {
-  padding: 1.2rem;
-  display: grid;
-  gap: 0.75rem;
 }
 
 .contact-section {
@@ -577,6 +505,10 @@ h3 {
   display: block;
   margin-bottom: 0.45rem;
   font-size: 1.05rem;
+}
+
+.contact-card a {
+  color: var(--accent);
 }
 
 .contact-form-card {
@@ -721,6 +653,15 @@ h3 {
   white-space: nowrap;
 }
 
+.footer-meta a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.footer-meta a:hover {
+  text-decoration: underline;
+}
+
 @keyframes drift {
   0%,
   100% {
@@ -760,7 +701,6 @@ h3 {
   }
 
   .service-grid,
-  .showcase-grid,
   .pillar-grid,
   .form-grid {
     grid-template-columns: 1fr;
@@ -790,11 +730,11 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.8rem, 16vw, 4.3rem);
+    font-size: clamp(2.2rem, 10vw, 3rem);
   }
 
   h2 {
-    font-size: clamp(2rem, 12vw, 3rem);
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
   }
 
   .hero-intro {
