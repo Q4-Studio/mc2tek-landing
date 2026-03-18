@@ -27,7 +27,7 @@ const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f
 
 <BaseLayout title={site.brand.legalName} description={site.brand.description} image={seoImage}>
   <a id="top"></a>
-  <SiteHeader brand={site.brand} nav={site.nav} />
+  <SiteHeader brand={site.brand} nav={site.nav} basePath={import.meta.env.BASE_URL} />
 
   <main>
     <section class="hero-section">
