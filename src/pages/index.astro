@@ -20,11 +20,7 @@ site.services = site.services.map((item) => ({
   ...item,
   icon: withBase(item.icon),
 }));
-site.approach.media = site.approach.media.map(withBase);
-site.showcase.cards = site.showcase.cards.map((item) => ({
-  ...item,
-  image: withBase(item.image),
-}));
+site.approach.image = withBase(site.approach.image);
 
 const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f.jpg");
 ---
@@ -102,37 +98,8 @@ const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f
         </div>
 
         <div class="method-visual" aria-hidden="true">
-          <div class="visual-orb"></div>
-          <img class="floating-media primary" src={site.approach.media[0]} alt="" loading="lazy" />
-          <img class="floating-media secondary" src={site.approach.media[1]} alt="" loading="lazy" />
-          <img class="floating-media accent" src={site.approach.media[2]} alt="" loading="lazy" />
-          <div class="method-caption">
-            <span>Industrial clean</span>
-            <p>Un sistema visivo piu attuale per raccontare innovazione, sicurezza e sostenibilita.</p>
-          </div>
+          <img src={site.approach.image} alt="" loading="lazy" />
         </div>
-      </div>
-    </section>
-
-    <section class="section showcase-section">
-      <div class="shell section-head">
-        <div>
-          <span class="eyebrow">{site.showcase.eyebrow}</span>
-          <h2>{site.showcase.title}</h2>
-        </div>
-        <p>{site.showcase.intro}</p>
-      </div>
-
-      <div class="shell showcase-grid">
-        {site.showcase.cards.map((card) => (
-          <article class="showcase-card">
-            <img src={card.image} alt={card.title} loading="lazy" />
-            <div class="showcase-card-copy">
-              <h3>{card.title}</h3>
-              <p>{card.text}</p>
-            </div>
-          </article>
-        ))}
       </div>
     </section>
 
@@ -185,7 +152,8 @@ const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f
         <p>{site.brand.description}</p>
       </div>
       <div class="footer-meta">
-        <span>{site.footer.credit}</span>
+        <span>&copy; 2025 MC2 TEK</span>
+        <span>Realizzato da <a href="https://q4.studio" target="_blank" rel="noreferrer">Q4 Studio</a></span>
         {site.footer.notes.map((note) => (
           <span>{note}</span>
         ))}
