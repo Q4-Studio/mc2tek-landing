@@ -1,11 +1,11 @@
 ---
-const { brand, nav, basePath } = Astro.props;
+const { brand, nav, logoSrc } = Astro.props;
 ---
 
 <header class="site-header">
   <div class="shell header-inner">
     <a class="brand-lockup" href="#top" aria-label={`Vai all'inizio di ${brand.name}`}>
-      <img class="brand-mark" src={`${basePath}source-assets/media/mc2tek-logo.png`} alt="MC2 TEK logo" />
+      <img class="brand-mark" src={logoSrc} alt="MC2 TEK logo" />
     </a>
 
     <nav class="main-nav" aria-label="Navigazione principale">
