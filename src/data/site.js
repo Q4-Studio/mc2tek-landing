@@ -15,6 +15,7 @@ export function createSiteConfig(webhookUrl = "") {
         "https://www.google.com/maps/place/Viale+del+Lavoro,+2,+35010+Vigonza+PD/@45.435452,11.956512,17z/data=!3m1!4b1!4m6!3m5!1s0x477ecffa8cf55b1b:0x393f84656ab6c660!8m2!3d45.435452!4d11.9590869!16s%2Fg%2F11d_6lmnvh?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D",
     },
     nav: [
+      { label: "Home", href: "#top" },
       { label: "Servizi", href: "#servizi" },
       { label: "Metodo", href: "#metodo" },
       { label: "Contatti", href: "#contatti" },
@@ -23,9 +24,9 @@ export function createSiteConfig(webhookUrl = "") {
       eyebrow: "MC2 TEK Ingegneria e Servizi",
       title: "Il tuo nuovo partner per una migliore innovazione.",
       intro:
-        "Le sfide moderne richiedono soluzioni ingegneristiche avanzate. Innovazione ed efficienza sono la chiave per trasformare le idee in realta sostenibili.",
+        "Progettiamo impianti meccanici, elettrici, speciali, antincendio ed energetici per edifici civili, industriali e del terziario.",
       primaryCta: {
-        label: "Parla con noi",
+        label: "Richiedi una Consulenza",
         href: "#contatti",
       },
       secondaryCta: {
@@ -45,7 +46,7 @@ export function createSiteConfig(webhookUrl = "") {
       {
         title: "Efficientamento Energetico",
         description:
-          "Sviluppiamo soluzioni innovative per ridurre i consumi e migliorare la sostenibilita, aumentando il valore degli immobili.",
+          "Sviluppiamo interventi per ridurre i consumi energetici e migliorare le prestazioni degli edifici, attraverso diagnosi, simulazioni, riqualificazioni e integrazione delle fonti rinnovabili.",
         icon: "/source-assets/media/icon-efficientamento-energetico.svg",
       },
       {

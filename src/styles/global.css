@@ -146,7 +146,7 @@ textarea {
 }
 
 .brand-mark {
-  height: 2.5rem;
+  height: 3.5rem;
   width: auto;
   object-fit: contain;
 }
@@ -701,6 +701,10 @@ h3 {
 }
 
 @media (max-width: 980px) {
+  .brand-mark {
+    height: 3rem;
+  }
+
   .header-inner,
   .section-head,
   .hero-grid,
