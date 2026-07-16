@@ -15,6 +15,7 @@ export function createSiteConfig(webhookUrl = "") {
         "https://www.google.com/maps/place/Viale+del+Lavoro,+2,+35010+Vigonza+PD/@45.435452,11.956512,17z/data=!3m1!4b1!4m6!3m5!1s0x477ecffa8cf55b1b:0x393f84656ab6c660!8m2!3d45.435452!4d11.9590869!16s%2Fg%2F11d_6lmnvh?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D",
     },
     nav: [
+      { label: "Home", href: "#top" },
       { label: "Servizi", href: "#servizi" },
       { label: "Metodo", href: "#metodo" },
       { label: "Contatti", href: "#contatti" },
@@ -23,9 +24,9 @@ export function createSiteConfig(webhookUrl = "") {
       eyebrow: "MC2 TEK Ingegneria e Servizi",
       title: "Il tuo nuovo partner per una migliore innovazione.",
       intro:
-        "Le sfide moderne richiedono soluzioni ingegneristiche avanzate. Innovazione ed efficienza sono la chiave per trasformare le idee in realta sostenibili.",
+        "Progettiamo impianti meccanici, elettrici, speciali, antincendio ed energetici per edifici civili, industriali e del terziario.",
       primaryCta: {
-        label: "Parla con noi",
+        label: "Richiedi una Consulenza",
         href: "#contatti",
       },
       secondaryCta: {
@@ -45,19 +46,19 @@ export function createSiteConfig(webhookUrl = "") {
       {
         title: "Efficientamento Energetico",
         description:
-          "Sviluppiamo soluzioni innovative per ridurre i consumi e migliorare la sostenibilita, aumentando il valore degli immobili.",
+          "Sviluppiamo interventi per ridurre i consumi energetici e migliorare le prestazioni degli edifici, attraverso diagnosi, simulazioni, riqualificazioni e integrazione delle fonti rinnovabili.",
         icon: "/source-assets/media/icon-efficientamento-energetico.svg",
       },
       {
         title: "Prevenzione Incendi",
         description:
-          "Offriamo progettazione e consulenza per impianti antincendio, nel rispetto delle normative, per garantire sicurezza e protezione totale.",
+          "Progettiamo le misure di prevenzione e protezione antincendio e gestiamo le pratiche autorizzative presso i Vigili del Fuoco, nel rispetto della normativa vigente.",
         icon: "/source-assets/media/icon-prevenzione-incendi.svg",
       },
       {
         title: "Sicurezza e Impianti Elettrici",
         description:
-          "Realizziamo impianti elettrici sicuri e tecnologicamente avanzati, per un utilizzo affidabile e conforme agli standard di settore.",
+          "Progettiamo impianti elettrici, illuminotecnici, fotovoltaici, domotici, antintrusione, trasmissione dati e supervisione, coordinandoli con le altre discipline progettuali.",
         icon: "/source-assets/media/icon-sicurezza-elettrica.svg",
       },
       {
@@ -69,7 +70,7 @@ export function createSiteConfig(webhookUrl = "") {
       {
         title: "Direzione Lavori",
         description:
-          "Coordiniamo e supervisioniamo ogni fase del progetto, assicurando qualita, rispetto delle tempistiche e massima efficienza.",
+          "Coordiniamo e verifichiamo l’esecuzione degli impianti, controllando conformità al progetto, qualità delle lavorazioni, tempi, costi, prove funzionali e documentazione finale.",
         icon: "/source-assets/media/icon-direzione-lavori.svg",
       },
     ],
@@ -77,23 +78,27 @@ export function createSiteConfig(webhookUrl = "") {
       eyebrow: "Metodo",
       title: "Un impianto progettato bene deve essere coerente in ogni dettaglio.",
       intro:
-        "Il restyling porta ordine, gerarchia e una voce piu attuale senza perdere il patrimonio tecnico di MC2TEK.",
+        "Dall’idea al collaudo: un processo coordinato per impianti affidabili e realizzabili.",
       pillars: [
         {
-          title: "Innovazione",
-          text: "Tecnologia e progettazione avanzata applicate a contesti reali.",
+          step: "01",
+          title: "Analisi e rilievo",
+          text: "Esaminiamo lo stato dei luoghi, le esigenze funzionali, i vincoli normativi e gli obiettivi energetici ed economici dell’intervento.",
         },
         {
-          title: "Efficienza",
-          text: "Prestazioni elevate, controllo dei consumi e riduzione dei costi di gestione.",
+          step: "02",
+          title: "Progettazione integrata e BIM",
+          text: "Sviluppiamo gli impianti meccanici, elettrici, speciali e antincendio, anche mediante modellazione BIM con Autodesk Revit.",
         },
         {
-          title: "Sostenibilita",
-          text: "Scelte che aumentano il valore degli immobili e sostengono la transizione energetica.",
+          step: "03",
+          title: "Coordinamento e verifica",
+          text: "Coordiniamo impianti, architettura e strutture, verificando interferenze, prestazioni, quantità e coerenza degli elaborati progettuali.",
         },
         {
-          title: "Supervisione",
-          text: "Direzione lavori e coordinamento costante per garantire esiti affidabili.",
+          step: "04",
+          title: "Direzione lavori e collaudo",
+          text: "Seguiamo l’esecuzione delle opere, controllando conformità, qualità, tempi, prove funzionali e documentazione finale degli impianti.",
         },
       ],
       image: "/source-assets/video/8a3721d7bdc28b2f072074060941bf78.jpg",
@@ -108,6 +113,16 @@ export function createSiteConfig(webhookUrl = "") {
     },
     footer: {
       notes: ["Privacy policy", "Informativa sui cookie"],
+      socials: [
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/company/mc2-tek-ingegneria-e-servizi/",
+        },
+        {
+          label: "Instagram",
+          href: "https://www.instagram.com/mc2_tek/",
+        },
+      ],
     },
   };
 }
