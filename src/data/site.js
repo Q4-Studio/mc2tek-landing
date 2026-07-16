@@ -52,13 +52,13 @@ export function createSiteConfig(webhookUrl = "") {
       {
         title: "Prevenzione Incendi",
         description:
-          "Offriamo progettazione e consulenza per impianti antincendio, nel rispetto delle normative, per garantire sicurezza e protezione totale.",
+          "Progettiamo le misure di prevenzione e protezione antincendio e gestiamo le pratiche autorizzative presso i Vigili del Fuoco, nel rispetto della normativa vigente.",
         icon: "/source-assets/media/icon-prevenzione-incendi.svg",
       },
       {
         title: "Sicurezza e Impianti Elettrici",
         description:
-          "Realizziamo impianti elettrici sicuri e tecnologicamente avanzati, per un utilizzo affidabile e conforme agli standard di settore.",
+          "Progettiamo impianti elettrici, illuminotecnici, fotovoltaici, domotici, antintrusione, trasmissione dati e supervisione, coordinandoli con le altre discipline progettuali.",
         icon: "/source-assets/media/icon-sicurezza-elettrica.svg",
       },
       {
@@ -70,7 +70,7 @@ export function createSiteConfig(webhookUrl = "") {
       {
         title: "Direzione Lavori",
         description:
-          "Coordiniamo e supervisioniamo ogni fase del progetto, assicurando qualita, rispetto delle tempistiche e massima efficienza.",
+          "Coordiniamo e verifichiamo l’esecuzione degli impianti, controllando conformità al progetto, qualità delle lavorazioni, tempi, costi, prove funzionali e documentazione finale.",
         icon: "/source-assets/media/icon-direzione-lavori.svg",
       },
     ],
@@ -78,23 +78,27 @@ export function createSiteConfig(webhookUrl = "") {
       eyebrow: "Metodo",
       title: "Un impianto progettato bene deve essere coerente in ogni dettaglio.",
       intro:
-        "Il restyling porta ordine, gerarchia e una voce piu attuale senza perdere il patrimonio tecnico di MC2TEK.",
+        "Dall’idea al collaudo: un processo coordinato per impianti affidabili e realizzabili.",
       pillars: [
         {
-          title: "Innovazione",
-          text: "Tecnologia e progettazione avanzata applicate a contesti reali.",
+          step: "01",
+          title: "Analisi e rilievo",
+          text: "Esaminiamo lo stato dei luoghi, le esigenze funzionali, i vincoli normativi e gli obiettivi energetici ed economici dell’intervento.",
         },
         {
-          title: "Efficienza",
-          text: "Prestazioni elevate, controllo dei consumi e riduzione dei costi di gestione.",
+          step: "02",
+          title: "Progettazione integrata e BIM",
+          text: "Sviluppiamo gli impianti meccanici, elettrici, speciali e antincendio, anche mediante modellazione BIM con Autodesk Revit.",
         },
         {
-          title: "Sostenibilita",
-          text: "Scelte che aumentano il valore degli immobili e sostengono la transizione energetica.",
+          step: "03",
+          title: "Coordinamento e verifica",
+          text: "Coordiniamo impianti, architettura e strutture, verificando interferenze, prestazioni, quantità e coerenza degli elaborati progettuali.",
         },
         {
-          title: "Supervisione",
-          text: "Direzione lavori e coordinamento costante per garantire esiti affidabili.",
+          step: "04",
+          title: "Direzione lavori e collaudo",
+          text: "Seguiamo l’esecuzione delle opere, controllando conformità, qualità, tempi, prove funzionali e documentazione finale degli impianti.",
         },
       ],
       image: "/source-assets/video/8a3721d7bdc28b2f072074060941bf78.jpg",

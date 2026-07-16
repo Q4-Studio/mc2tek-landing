@@ -88,10 +88,12 @@ const seoImage = withBase("/source-assets/video/d36175f4549276e09bf8bac02ef5958f
           <p>{site.approach.intro}</p>
 
           <div class="pillar-grid">
-            {site.approach.pillars.map((pillar) => (
+            {site.approach.pillars.map((pillar, index) => (
               <article class="pillar-card">
+                <span class="pillar-step">{pillar.step}</span>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.text}</p>
+                {index < site.approach.pillars.length - 1 && <span class="pillar-connector" aria-hidden="true"></span>}
               </article>
             ))}
           </div>

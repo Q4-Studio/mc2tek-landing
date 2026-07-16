@@ -446,15 +446,89 @@ h3 {
 .pillar-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-areas:
+    "step-1 step-2"
+    "step-4 step-3";
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .pillar-card {
+  position: relative;
   padding: 1.25rem;
   border-color: var(--line-inverse);
   background: rgba(237, 244, 242, 0.06);
   box-shadow: none;
+}
+
+.pillar-card:nth-child(1) {
+  grid-area: step-1;
+}
+
+.pillar-card:nth-child(2) {
+  grid-area: step-2;
+}
+
+.pillar-card:nth-child(3) {
+  grid-area: step-3;
+}
+
+.pillar-card:nth-child(4) {
+  grid-area: step-4;
+}
+
+.pillar-step {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.pillar-connector {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--text-inverse);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pillar-card:nth-child(1) .pillar-connector {
+  top: 50%;
+  right: -1.75rem;
+  transform: translateY(-50%);
+}
+
+.pillar-card:nth-child(1) .pillar-connector::before {
+  content: "→";
+}
+
+.pillar-card:nth-child(2) .pillar-connector {
+  bottom: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pillar-card:nth-child(2) .pillar-connector::before {
+  content: "↓";
+}
+
+.pillar-card:nth-child(3) .pillar-connector {
+  top: 50%;
+  left: -1.75rem;
+  transform: translateY(-50%);
+}
+
+.pillar-card:nth-child(3) .pillar-connector::before {
+  content: "←";
 }
 
 .method-visual {
@@ -724,6 +798,27 @@ h3 {
   .pillar-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pillar-grid {
+    grid-template-areas: none;
+    row-gap: 1.5rem;
+  }
+
+  .pillar-card:nth-child(n) {
+    grid-area: auto;
+  }
+
+  .pillar-card:nth-child(n) .pillar-connector {
+    top: auto;
+    right: auto;
+    bottom: -1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pillar-card:nth-child(n) .pillar-connector::before {
+    content: "↓";
   }
 
   .hero-grid {
