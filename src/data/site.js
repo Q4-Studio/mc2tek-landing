@@ -113,6 +113,16 @@ export function createSiteConfig(webhookUrl = "") {
     },
     footer: {
       notes: ["Privacy policy", "Informativa sui cookie"],
+      socials: [
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/company/mc2-tek-ingegneria-e-servizi/",
+        },
+        {
+          label: "Instagram",
+          href: "https://www.instagram.com/mc2_tek/",
+        },
+      ],
     },
   };
 }
