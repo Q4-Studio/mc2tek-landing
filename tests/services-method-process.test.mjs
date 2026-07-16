@@ -36,7 +36,7 @@ test("services and Method process match the approved content and route", () => {
     {
       step: "02",
       title: "Progettazione integrata e BIM",
-      text: "Sviluppiamo gli impianti meccanici, elettrici, speciali e antincendio, anche mediante modellazione BIM con Autodesk Revit.",
+      text: "Sviluppiamo gli impianti meccanici, elettrici, speciali e antincendio, sfruttando anche la metodologia BIM attraverso un modello digitale condiviso permettendo di coordinare dati, strutture e impianti in tempo reale per ottimizzare l'opera e azzerare gli errori prima dell'avvio del cantiere.",
     },
     {
       step: "03",
