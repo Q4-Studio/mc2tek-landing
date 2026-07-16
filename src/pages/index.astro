@@ -138,7 +138,6 @@ const currentYear = new Date().getFullYear();
             <article class="contact-card">
               <span>Impresa</span>
               <strong>Partita IVA {site.brand.vat}</strong>
-              <p>GitHub Pages in hosting statico. Webhook form configurabile in deploy.</p>
             </article>
           </div>
         </div>
@@ -152,7 +151,7 @@ const currentYear = new Date().getFullYear();
     <div class="shell footer-inner">
       <div class="footer-brand">
         <a class="footer-brand-link" href="#top" aria-label={`Vai all'inizio di ${site.brand.name}`}>
-          <img class="footer-logo" src={logoSrc} alt="MC2 TEK" />
+          <img class="footer-logo" src={logoSrc} alt="MC² TEK" />
         </a>
         <p class="footer-tagline">Ingegneria integrata per impianti affidabili, efficienti e realizzabili.</p>
         <div class="footer-socials" aria-label="Profili social">
@@ -197,7 +196,7 @@ const currentYear = new Date().getFullYear();
           ))}
         </div>
         <p class="footer-credit">
-          &copy; {currentYear} MC2 TEK<br />
+          &copy; {currentYear} {site.brand.name}<br />
           Realizzato da <a href="https://q4.studio" target="_blank" rel="noreferrer">Q4 Studio</a>
         </p>
       </div>

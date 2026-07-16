@@ -1,23 +1,13 @@
 ---
 const { contact } = Astro.props;
-const webhookConfigured = Boolean(contact.webhookUrl);
 ---
 
 <div class="contact-form-card">
   <div class="contact-form-head">
-    <span class="eyebrow">Webhook form</span>
+    <span class="eyebrow">Richiedi informazioni</span>
     <h3>Contatto diretto</h3>
-    <p>
-      Form custom statico pronto per GitHub Pages. Invio JSON verso webhook configurabile.
-    </p>
+    <p>Compila il modulo e raccontaci le esigenze del tuo progetto.</p>
   </div>
-
-  {!webhookConfigured && (
-    <p class="inline-note">
-      Endpoint non ancora configurato. Il form e gia pronto: basta impostare
-      <code>PUBLIC_CONTACT_WEBHOOK_URL</code> al prossimo deploy.
-    </p>
-  )}
 
   <form class="contact-form" data-contact-form data-webhook-url={contact.webhookUrl}>
     <div class="form-grid">
@@ -52,7 +42,7 @@ const webhookConfigured = Boolean(contact.webhookUrl);
     <div class="form-actions">
       <button class="button" type="submit">Invia richiesta</button>
       <p class="form-status" data-form-status aria-live="polite">
-        Compila i campi e invia. Il payload include anche l'URL della pagina.
+        Compila i campi richiesti e invia il messaggio.
       </p>
     </div>
   </form>
@@ -76,7 +66,7 @@ const webhookConfigured = Boolean(contact.webhookUrl);
 
       const endpoint = form.dataset.webhookUrl?.trim();
       if (!endpoint) {
-        setStatus("error", "Webhook non configurato. Imposta PUBLIC_CONTACT_WEBHOOK_URL per attivare l'invio.");
+        setStatus("error", "Il modulo non è al momento disponibile. Contattaci via email o telefono.");
         return;
       }
 
@@ -103,14 +93,14 @@ const webhookConfigured = Boolean(contact.webhookUrl);
         });
 
         if (!response.ok) {
-          throw new Error(`Webhook response ${response.status}`);
+          throw new Error(`Form response ${response.status}`);
         }
 
         form.reset();
         setStatus("success", "Richiesta inviata correttamente.");
       } catch (error) {
         console.error(error);
-        setStatus("error", "Invio non riuscito. Verifica il webhook o riprova piu tardi.");
+        setStatus("error", "Invio non riuscito. Riprova più tardi o contattaci via email o telefono.");
       }
     });
   });

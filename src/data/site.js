@@ -1,8 +1,8 @@
 export function createSiteConfig(webhookUrl = "") {
   return {
     brand: {
-      name: "MC2 TEK",
-      legalName: "MC2 TEK Ingegneria e Servizi",
+      name: "MC² TEK",
+      legalName: "MC² TEK Ingegneria e Servizi",
       description:
         "Ingegneria e progettazione di impianti elettrici, termotecnici e riscaldamento in Veneto. Efficienza, innovazione, sostenibilita e transizione energetica a Padova.",
       location: "Vigonza (PD)",
@@ -21,7 +21,7 @@ export function createSiteConfig(webhookUrl = "") {
       { label: "Contatti", href: "#contatti" },
     ],
     hero: {
-      eyebrow: "MC2 TEK Ingegneria e Servizi",
+      eyebrow: "MC² TEK Ingegneria e Servizi",
       title: "Il tuo nuovo partner per una migliore innovazione.",
       intro:
         "Progettiamo impianti meccanici, elettrici, speciali, antincendio ed energetici per edifici civili, industriali e del terziario.",
@@ -88,7 +88,7 @@ export function createSiteConfig(webhookUrl = "") {
         {
           step: "02",
           title: "Progettazione integrata e BIM",
-          text: "Sviluppiamo gli impianti meccanici, elettrici, speciali e antincendio, anche mediante modellazione BIM con Autodesk Revit.",
+          text: "Sviluppiamo gli impianti meccanici, elettrici, speciali e antincendio, sfruttando anche la metodologia BIM attraverso un modello digitale condiviso permettendo di coordinare dati, strutture e impianti in tempo reale per ottimizzare l'opera e azzerare gli errori prima dell'avvio del cantiere.",
         },
         {
           step: "03",
@@ -107,7 +107,7 @@ export function createSiteConfig(webhookUrl = "") {
       eyebrow: "Contatti",
       title: "Raccontaci il progetto.",
       intro:
-        "Il form e pronto per essere collegato al tuo webhook. Intanto restano visibili tutti i riferimenti diretti di MC2TEK.",
+        "Descrivi le esigenze, gli obiettivi e lo stato del progetto: il nostro team ti ricontatterà per approfondire la richiesta.",
       webhookUrl,
       fields: ["name", "email", "phone", "company", "message", "privacyAccepted", "pageUrl"],
     },
